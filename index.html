@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <title>My Portfolio</title>
+
+      <!-- ui-router -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
+      <!-- Libraries -->
+      <script src="https://code.jquery.com/jquery.min.js"></script>
+      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+
+      <!-- Custom code -->
+      <script src="js/main.js"></script>
+      <link href = "css/main.css" rel="stylesheet" type = "text/css"/>
+  </head>
+  
+  <body>
+    <h1>INFO343 Portfolio</h1>
+    <nav>
+      <ul>
+        <li><a ui-sref="home">HOME</a></li>
+        <li><a ui-sref="portfolio">PORTFOLIO</a></li>
+        <li><a ui-sref="about">ABOUT</a></li>
+        <li><a ui-sref="contact">CONTACT</a></li>
+      </ul>
+    </nav>
+
+    <div class="container">
+      <div ui-view></div>
+    </div>
+    
+    <!-- a link back to top -->
+    <div>
+      <a href="#" id="toTop">
+        <i class="fa fa-arrow-up fa-3x"></i>
+        <p>back to top</p>
+      </a>  
+    </div>    
+  </body>
+
+  <footer>
+    <p>Yi Pang, Information School, 2015</p>
+  </footer>
+</html>
