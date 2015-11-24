@@ -1,44 +1,62 @@
 <!DOCTYPE html>
-<html ng-app="myApp">
+<html ng-app="myApp" ng-controller="myCtrl">
   <head>
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <title>My Portfolio</title>
+      <title>Yi Pang Portfolio</title>
 
-      <!-- ui-router -->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
       <!-- Libraries -->
       <script src="https://code.jquery.com/jquery.min.js"></script>
       <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
 
+      <!-- ui-router -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
+
       <!-- Custom code -->
-      <script src="js/main.js"></script>
       <link href = "css/main.css" rel="stylesheet" type = "text/css"/>
+      <script src="js/main.js"></script>
   </head>
   
   <body>
-    <h1>INFO343 Portfolio</h1>
-    <nav>
-      <ul>
-        <li><a ui-sref="home">HOME</a></li>
-        <li><a ui-sref="portfolio">PORTFOLIO</a></li>
-        <li><a ui-sref="about">ABOUT</a></li>
-        <li><a ui-sref="contact">CONTACT</a></li>
-      </ul>
-    </nav>
+    <div id="head">
+      <h1>Yi Pang INFO343 Portfolio</h1>
+    </div>
+    
+    <div class="container" id="nav">
+      <a class="btn btn-default" ui-sref="home">HOME</a>
+      <a class="btn btn-default" ui-sref="projects">PROJECTS</a>
+      <a class="btn btn-default" ui-sref="about">ABOUT</a>
+      <a class="btn btn-default" ui-sref="contact">CONTACT</a>
+    </div>
 
     <div class="container">
+      <h2>Some Intro</h2>
+      <p>This is mainly about what I learned this quarter. Including html, javascript, angular, css file and so on. I am using this website to show them.</p>
+    </div>
+
+    <div class="container">
+      <!-- This is where your content will display -->
       <div ui-view></div>
+    </div>
+
+    <div class="container">
+      <h2>Projects</h2>
+      <div ng-repeat="p in data" class="list" id="project">
+        <dl>
+          <a href='{{p.url}}' target="_blank"><dt>{{p.topic}}</dt></a>
+          <dd>{{p.description}}</dd>
+        </dl>
+      </div>
     </div>
     
     <!-- a link back to top -->
     <div>
       <a href="#" id="toTop">
-        <i class="fa fa-arrow-up fa-3x"></i>
+        <i class="fa fa-arrow-up fa-2x"></i>
         <p>back to top</p>
       </a>  
     </div>    
